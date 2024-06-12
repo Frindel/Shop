@@ -17,7 +17,7 @@ namespace App.Persistence
             {
                 // используется база данных в памяти
                 var options = new DbContextOptionsBuilder<AppContext>()
-                    .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options;
+                    .UseInMemoryDatabase("db").Options;
 
                 return new AppContext(options);
             });
