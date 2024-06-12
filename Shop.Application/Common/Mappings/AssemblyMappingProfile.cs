@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using System.Reflection;
 
-namespace TodoCalendar.Application.Common.Mappings
+namespace Shop.Application.Common.Mappings
 {
     public class AssemblyMappingProfile : Profile
     {

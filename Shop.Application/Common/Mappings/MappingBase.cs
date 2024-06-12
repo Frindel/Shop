@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace TodoCalendar.Application.Common.Mappings
+namespace Shop.Application.Common.Mappings
 {
     public abstract class MappingBase<T>
     {

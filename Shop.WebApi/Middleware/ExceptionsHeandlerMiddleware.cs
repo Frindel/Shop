@@ -38,7 +38,13 @@ namespace Shop.WebApi.Middleware
                     result = JsonSerializer.Serialize(validationException.Errors.Select(e=>new { error = e.ErrorMessage }).ToArray());
                     break;
 
+                case ForbiddenException:
+                    code = HttpStatusCode.Forbidden;
+                    result = JsonSerializer.Serialize(new { error = "You have not permission to access" });
+                    break;
+
                 case NotFoundException:
+                    code = HttpStatusCode.NotFound;
                     break;
             }
 

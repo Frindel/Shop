@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Shop.Application;
+using Shop.Application.Common.Mappings;
 using Shop.WebApi.Middleware;
 using System.Reflection;
 using System.Text;
-using TodoCalendar.Application.Common.Mappings;
 
 namespace Shop.WebApi
 {

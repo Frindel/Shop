@@ -12,6 +12,7 @@ namespace Shop.WebApi.Controllers
         [HttpGet("register")]
         public async Task<IActionResult> Register([FromQuery] RegisterRequest request)
         {
+            // todo: перенести проверку в mediatoR
             if (!request.IsAdmin.HasValue)
                 return BadRequest(new {error = "property \"isAdmin\" is not seted"});
 
