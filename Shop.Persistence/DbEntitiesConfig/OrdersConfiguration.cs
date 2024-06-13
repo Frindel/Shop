@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Shop.Domain;
 
-namespace TodoCalendar.Persistence.DbEntitiesConfig
+namespace Shop.Persistence.DbEntitiesConfig
 {
     public class OrdersConfiguration : IEntityTypeConfiguration<Order>
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shop.Application.Interfaces;
 using Shop.Domain;
-using TodoCalendar.Persistence.DbEntitiesConfig;
+using Shop.Persistence.DbEntitiesConfig;
 
 namespace Shop.Persistence
 {
