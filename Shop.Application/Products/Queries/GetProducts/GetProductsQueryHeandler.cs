@@ -6,7 +6,7 @@ using Shop.Application.Interfaces;
 
 namespace Shop.Application.Products.Queries.GetProducts
 {
-    public class GetOrdersQueryHeandler : IRequestHandler<GetOrdersQuery, OrdersListVm>
+    public class GetOrdersQueryHeandler : IRequestHandler<GetProductsQuery, OrdersListVm>
     {
         IProductsContext _products;
         IMapper _mapper;
@@ -17,7 +17,7 @@ namespace Shop.Application.Products.Queries.GetProducts
             _mapper = mapper;
         }
 
-        public async Task<OrdersListVm> Handle(GetOrdersQuery request, CancellationToken cancellationToken)
+        public async Task<OrdersListVm> Handle(GetProductsQuery request, CancellationToken cancellationToken)
         {
             var products = await _products.Products
                 .ProjectTo<OrderVm>(_mapper.ConfigurationProvider)

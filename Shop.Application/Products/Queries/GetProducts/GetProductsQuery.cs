@@ -2,7 +2,7 @@
 
 namespace Shop.Application.Products.Queries.GetProducts
 {
-    public class GetOrdersQuery : IRequest<OrdersListVm>
+    public class GetProductsQuery : IRequest<OrdersListVm>
     {
     }
 }

@@ -5,6 +5,6 @@ namespace Shop.WebApi.Models.Products
     public class DeleteProductRequest
     {
         [Required]
-        public int ProductId { get; set; }
+        public int Id { get; set; }
     }
 }
