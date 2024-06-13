@@ -25,14 +25,14 @@ namespace Shop.Application.Orders.Commands.DeleteOrder
                 .FirstOrDefaultAsync(u => u.Id == request.UserId, cancellationToken);
 
             if (currentUser == null)
-                throw new NotFoundException();
+                throw new NotFoundException("user was not found");
 
             Order? order = await _orders
                 .Orders
                 .FirstOrDefaultAsync(p => p.Id == request.OrderId && p.UserId == currentUser.Id);
 
             if (order == null)
-                throw new NotFoundException();
+                throw new NotFoundException("order was not found");
 
             _orders.Orders.Remove(order);
             await _orders.SaveChangesAsync(cancellationToken);

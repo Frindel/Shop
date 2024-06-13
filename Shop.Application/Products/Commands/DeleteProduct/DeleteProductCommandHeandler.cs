@@ -25,17 +25,17 @@ namespace Shop.Application.Products.Commands.DeleteProduct
                 .FirstOrDefaultAsync(u => u.Id == request.UserId, cancellationToken);
 
             if (currentUser == null)
-                throw new NotFoundException();
+                throw new NotFoundException("user was not found");
 
             if (currentUser.IsAdmin == false)
-                throw new ForbiddenException();
+                throw new ForbiddenException("user is not an admin");
 
             Product? product = await _products
                 .Products
                 .FirstOrDefaultAsync(p => p.Id == request.ProductId);
 
             if (product == null)
-                throw new NotFoundException();
+                throw new NotFoundException("products was not found");
 
             _products.Products.Remove(product);
             await _products.SaveChangesAsync(cancellationToken);

@@ -9,7 +9,7 @@ namespace Shop.WebApi.Controllers
         private IMediator _mediator = null!;
         protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>()!;
 
-        protected int CurrentUserId { get => int.Parse(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value); }
+        protected int CurrentUserId { get => int.Parse(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)!.Value); }
 
         //protected int CurrentUserId { get => 1; }
     }

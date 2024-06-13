@@ -29,14 +29,14 @@ namespace Shop.Application.Orders.Commands.CreateOrder
                 .FirstOrDefaultAsync(u => u.Id == request.UserId, cancellationToken);
 
             if (currentUser == null)
-                throw new NotFoundException();
+                throw new NotFoundException("user was not found");
 
             var products = await _products
                 .Products
                 .Where(p => request.ProductsId.Contains(p.Id)).ToListAsync();
 
             if (products.Count != request.ProductsId.Count)
-                throw new NotFoundException();
+                throw new NotFoundException("products was not found");
 
             Order order = new Order()
             {

@@ -29,7 +29,7 @@ namespace Shop.Application.Orders.Commands.EditOrder
                 .FirstOrDefaultAsync(u => u.Id == request.UserId, cancellationToken);
 
             if (currentUser == null)
-                throw new NotFoundException();
+                throw new NotFoundException("user was not found");
 
             // проверка существования заказа в БД
             Order? order = await _orders
@@ -37,7 +37,7 @@ namespace Shop.Application.Orders.Commands.EditOrder
                 .FirstOrDefaultAsync(o => o.Id == request.UserId && o.UserId == currentUser.Id);
 
             if (order == null)
-                throw new NotFoundException();
+                throw new NotFoundException("order was not found");
 
             // проверка существования товаров в БД
             var products = await _products
@@ -45,7 +45,7 @@ namespace Shop.Application.Orders.Commands.EditOrder
                 .Where(p => request.ProductsId.Contains(p.Id)).ToListAsync();
 
             if (products.Count != request.ProductsId.Count)
-                throw new NotFoundException();
+                throw new NotFoundException("products was not found");
 
             order.Products = products;
             await _orders.SaveChangesAsync(cancellationToken);

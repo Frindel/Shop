@@ -40,11 +40,13 @@ namespace Shop.WebApi.Middleware
 
                 case ForbiddenException:
                     code = HttpStatusCode.Forbidden;
-                    result = JsonSerializer.Serialize(new { error = "You have not permission to access" });
+                    //result = JsonSerializer.Serialize(new { error = "You have not permission to access" });
+                    result = JsonSerializer.Serialize(new {error = exc.Message});
                     break;
 
                 case NotFoundException:
                     code = HttpStatusCode.NotFound;
+                    result = JsonSerializer.Serialize(new { error = exc.Message});
                     break;
             }
 

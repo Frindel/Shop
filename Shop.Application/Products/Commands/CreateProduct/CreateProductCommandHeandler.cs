@@ -25,10 +25,10 @@ namespace Shop.Application.Products.Commands.CreateProduct
             User? currentUser = await _users.Users.FirstOrDefaultAsync(u => u.Id == request.UserId, cancellationToken);
 
             if (currentUser == null)
-                throw new NotFoundException();
+                throw new NotFoundException("user was not found");
 
             if (currentUser.IsAdmin == false)
-                throw new ForbiddenException();
+                throw new ForbiddenException("user is not an admin");
 
             Product product = new Product()
             {

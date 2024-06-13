@@ -22,7 +22,7 @@ namespace Shop.Application.Accounts.Commands.UpdateAccessToken
             User? user = await _users.Users.FirstOrDefaultAsync(u => u.RefreshToken == request.RefreshTocken);
 
             if (user == null)
-                throw new NotFoundException();
+                throw new NotFoundException("user was not found");
 
             string newAccessToken = _tokensGenerator.GenerateAccessTocken(user.Id);
             string newRefreshToken = _tokensGenerator.GenerateRefreshTocken();

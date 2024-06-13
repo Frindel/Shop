@@ -28,10 +28,10 @@ namespace Shop.Application.Orders.Queries.GetOrders
                 .FirstOrDefaultAsync(u => u.Id == request.UserId);
 
             if (currentUser == null)
-                throw new NotFoundException();
+                throw new NotFoundException("user was not found");
 
-            var orders = await _orders.Orders.Include(o=>o.Products)
-                .Where(o=>o.UserId == request.UserId)
+            var orders = await _orders.Orders.Include(o => o.Products)
+                .Where(o => o.UserId == request.UserId)
                 .ProjectTo<OrderVm>(_mapper.ConfigurationProvider)
                 .ToListAsync();
 
