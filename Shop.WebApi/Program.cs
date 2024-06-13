@@ -1,4 +1,4 @@
-using App.Persistence;
+using Shop.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;

@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Domain", "Shop.Domain\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Application", "Shop.Application\Shop.Application.csproj", "{DA1E01B3-EC55-444C-8BC9-4AC1120BEBA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Persistence", "App.Persistence\App.Persistence.csproj", "{58172BF6-6263-45DB-B8BF-BF21BB0FF5B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Persistence", "Shop.Persistence\Shop.Persistence.csproj", "{58172BF6-6263-45DB-B8BF-BF21BB0FF5B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.WebApi", "Shop.WebApi\Shop.WebApi.csproj", "{77324B6E-8A6D-4694-B86F-34CF6C17828B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.WebApi", "Shop.WebApi\Shop.WebApi.csproj", "{77324B6E-8A6D-4694-B86F-34CF6C17828B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

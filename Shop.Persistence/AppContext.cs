@@ -2,7 +2,7 @@
 using Shop.Application.Interfaces;
 using Shop.Domain;
 
-namespace App.Persistence
+namespace Shop.Persistence
 {
     public class AppContext : DbContext, IUsersContext, IProductsContext, IOrdersContext
     {

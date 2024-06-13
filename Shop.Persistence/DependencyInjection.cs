@@ -4,7 +4,7 @@ using Shop.Application.Interfaces;
 using Shop.Persistence;
 using Microsoft.Extensions.Configuration;
 
-namespace App.Persistence
+namespace Shop.Persistence
 {
     public static class DependencyInjection
     {
