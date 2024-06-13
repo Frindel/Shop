@@ -44,6 +44,7 @@ namespace Shop.WebApi.Controllers
         {
             var command = new EditOrderCommand()
             {
+                OrderId = request.Id,
                 UserId = CurrentUserId,
                 ProductsId = request.ProductsId ?? new List<int>()
             };

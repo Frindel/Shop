@@ -33,7 +33,7 @@ namespace Shop.Application.Orders.Commands.EditOrder
 
             // проверка существования заказа в БД
             Order? order = await _orders
-                .Orders
+                .Orders.Include(o=>o.Products)
                 .FirstOrDefaultAsync(o => o.Id == request.UserId && o.UserId == currentUser.Id);
 
             if (order == null)

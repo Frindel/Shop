@@ -49,11 +49,14 @@ namespace App.Persistence
                 IsAdmin = true
             };
 
+            Users.Add(admin);
+
             // получение id для продуктов и пользователя
             SaveChanges();
 
             Orders.AddRange(new Order()
             {
+                User = admin,
                 Products = products,
             });
 
