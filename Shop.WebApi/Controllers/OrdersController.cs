@@ -101,13 +101,13 @@ namespace Shop.WebApi.Controllers
         /// </summary>
         /// <remarks>
         /// Sample request:
-        /// PUT /api/orders
+        /// DELETE /api/orders
         /// {
         ///     "id": 1
         /// }
         /// </remarks>
         /// <returns>Returns NoContent</returns>
-        /// <response code="200">Success</response>
+        /// <response code="204">Success</response>
         /// <response code="400">User or order not found</response>
         /// <response code="401">User is unauthorized</response>
         [HttpDelete]

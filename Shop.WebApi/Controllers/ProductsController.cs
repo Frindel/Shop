@@ -47,7 +47,7 @@ namespace Shop.WebApi.Controllers
         /// <param name="request">CreateProductRequest object</param>
         /// <returns>Returns the created product with the id</returns>
         /// <response code="200">Success</response>
-        /// <response code="400">User info not found</response>
+        /// <response code="400">User or product not found</response>
         /// <response code="401">If the user is unauthorized</response>
         [HttpPost()]
         public async Task<IActionResult> CreateProduct([FromBody] CreateProductRequest request)
@@ -69,17 +69,16 @@ namespace Shop.WebApi.Controllers
         /// </summary>
         /// <remarks>
         /// Sample request:
-        /// POST /api/products
+        /// DELETE /api/products
         /// {
         ///     "id": 2
         /// }
         /// </remarks>
         /// <param name="request">DeleteProductRequest object</param>
         /// <returns>Returns NoContent</returns>
-        /// <response code="200">Success</response>
-        /// <response code="400">User info not found</response>
+        /// <response code="204">Success</response>
+        /// <response code="400">User or product not found</response>
         /// <response code="401">If the user is unauthorized</response>
-        /// <response code="403">User is not an admin</response>
         [HttpDelete()]
         public async Task<IActionResult> DeleteProduct([FromBody] DeleteProductRequest request)
         {
