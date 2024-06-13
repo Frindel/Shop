@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Shop.Application.Categories.Commands.CreateProduct;
-using Shop.Application.Categories.Commands.DeleteProduct;
+using Shop.Application.Products.Commands.CreateProduct;
+using Shop.Application.Products.Commands.DeleteProduct;
 using Shop.Application.Products.Queries.GetProducts;
 using Shop.WebApi.Models.Products;
 
@@ -12,7 +12,7 @@ namespace Shop.WebApi.Controllers
         [HttpGet()]
         public async Task<IActionResult> GetAll()
         {
-            var query = new GetProductsQuery();
+            var query = new GetOrdersQuery();
 
             var products = await Mediator.Send(query);
 

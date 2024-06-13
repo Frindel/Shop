@@ -5,7 +5,7 @@ using Shop.Application.Common.Exceptions;
 using Shop.Application.Interfaces;
 using Shop.Domain;
 
-namespace Shop.Application.Categories.Commands.CreateProduct
+namespace Shop.Application.Products.Commands.CreateProduct
 {
     public class DeleteProductCommandHeandler : IRequestHandler<CreateProductCommand, ProductVm>
     {

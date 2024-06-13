@@ -1,8 +1,9 @@
 ﻿using MediatR;
 
-namespace Shop.Application.Products.Queries.GetProducts
+namespace Shop.Application.Orders.Queries.GetOrders
 {
     public class GetOrdersQuery : IRequest<OrdersListVm>
     {
+        public int UserId { get; set; }
     }
 }

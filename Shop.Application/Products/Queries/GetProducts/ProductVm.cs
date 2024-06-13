@@ -3,7 +3,7 @@ using Shop.Domain;
 
 namespace Shop.Application.Products.Queries.GetProducts
 {
-    public class ProductVm : MappingBase<Product>
+    public class OrderVm : MappingBase<Product>
     {
         public int Id { get; set; }
 

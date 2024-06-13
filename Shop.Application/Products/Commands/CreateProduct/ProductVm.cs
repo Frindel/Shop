@@ -1,7 +1,7 @@
 ﻿using Shop.Application.Common.Mappings;
 using Shop.Domain;
 
-namespace Shop.Application.Categories.Commands.CreateProduct
+namespace Shop.Application.Products.Commands.CreateProduct
 {
     public class ProductVm : MappingBase<Product>
     {

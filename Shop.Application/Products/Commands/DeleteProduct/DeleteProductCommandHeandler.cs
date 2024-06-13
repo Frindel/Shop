@@ -4,14 +4,14 @@ using Shop.Application.Common.Exceptions;
 using Shop.Application.Interfaces;
 using Shop.Domain;
 
-namespace Shop.Application.Categories.Commands.DeleteProduct
+namespace Shop.Application.Products.Commands.DeleteProduct
 {
-    public class DeleteProductCommandHeandler : IRequestHandler<DeleteProductCommand>
+    public class DeleteOrderCommandHeandler : IRequestHandler<DeleteProductCommand>
     {
         IProductsContext _products;
         IUsersContext _users;
 
-        public DeleteProductCommandHeandler(IProductsContext products, IUsersContext users)
+        public DeleteOrderCommandHeandler(IProductsContext products, IUsersContext users)
         {
             _products = products;
             _users = users;

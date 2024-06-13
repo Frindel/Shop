@@ -6,24 +6,24 @@ using Shop.Application.Interfaces;
 
 namespace Shop.Application.Products.Queries.GetProducts
 {
-    public class GetProductsQueryHeandler : IRequestHandler<GetProductsQuery, ProductsListVm>
+    public class GetOrdersQueryHeandler : IRequestHandler<GetOrdersQuery, OrdersListVm>
     {
         IProductsContext _products;
         IMapper _mapper;
 
-        public GetProductsQueryHeandler(IProductsContext products, IMapper mapper)
+        public GetOrdersQueryHeandler(IProductsContext products, IMapper mapper)
         {
             _products = products;
             _mapper = mapper;
         }
 
-        public async Task<ProductsListVm> Handle(GetProductsQuery request, CancellationToken cancellationToken)
+        public async Task<OrdersListVm> Handle(GetOrdersQuery request, CancellationToken cancellationToken)
         {
             var products = await _products.Products
-                .ProjectTo<ProductVm>(_mapper.ConfigurationProvider)
+                .ProjectTo<OrderVm>(_mapper.ConfigurationProvider)
                 .ToListAsync();
 
-            return new ProductsListVm() { Products = products };
+            return new OrdersListVm() { Products = products };
         }
     }
 }

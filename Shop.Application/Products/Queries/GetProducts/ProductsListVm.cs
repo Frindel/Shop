@@ -1,8 +1,8 @@
 ﻿
 namespace Shop.Application.Products.Queries.GetProducts
 {
-    public class ProductsListVm
+    public class OrdersListVm
     {
-        public List<ProductVm> Products { get; set; } = null!;
+        public List<OrderVm> Products { get; set; } = null!;
     }
 }
