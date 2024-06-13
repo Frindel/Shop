@@ -34,7 +34,7 @@ namespace Shop.Application.Orders.Commands.EditOrder
             // проверка существования заказа в БД
             Order? order = await _orders
                 .Orders.Include(o=>o.Products)
-                .FirstOrDefaultAsync(o => o.Id == request.UserId && o.UserId == currentUser.Id);
+                .FirstOrDefaultAsync(o => o.Id == request.OrderId && o.UserId == currentUser.Id);
 
             if (order == null)
                 throw new NotFoundException("order was not found");
@@ -47,7 +47,8 @@ namespace Shop.Application.Orders.Commands.EditOrder
             if (products.Count != request.ProductsId.Count)
                 throw new NotFoundException("products was not found");
 
-            order.Products = products;
+            order.Products.Clear();
+            order.Products.AddRange(products);
             await _orders.SaveChangesAsync(cancellationToken);
 
             return _mapper.Map<OrderVm>(order);

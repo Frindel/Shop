@@ -13,7 +13,9 @@ namespace Shop.Application.Orders.Queries.GetOrders
         {
             profile.CreateMap<Order, OrderVm>()
                 .ForMember(orderVm => orderVm.Product,
-                opt => opt.MapFrom(order => order.Products.Select(c => new ProductVm()
+                opt => opt.MapFrom(order =>
+                
+                order.Products.Select(c => new ProductVm()
                 {
                     Id = c.Id,
                     Name = c.Name

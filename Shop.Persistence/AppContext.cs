@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shop.Application.Interfaces;
 using Shop.Domain;
+using TodoCalendar.Persistence.DbEntitiesConfig;
 
 namespace Shop.Persistence
 {
@@ -14,6 +15,14 @@ namespace Shop.Persistence
         {
             //Database.EnsureCreated();
             InitDbInMemory();
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //  настройка конфигурации сущностей БД
+            modelBuilder.ApplyConfiguration(new OrdersConfiguration());
+
+            base.OnModelCreating(modelBuilder);
         }
 
         static bool isInit = false;
