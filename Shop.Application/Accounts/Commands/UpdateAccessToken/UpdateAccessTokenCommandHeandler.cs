@@ -19,13 +19,12 @@ namespace Shop.Application.Accounts.Commands.UpdateAccessToken
 
         public async Task<Tokens> Handle(UpdateAccessTokenCommand request, CancellationToken cancellationToken)
         {
-            var all = await _users.Users.ToListAsync();
-            User? user = await _users.Users.FirstOrDefaultAsync(u => u.Id == request.UserId && u.RefreshToken == request.RefreshTocken);
+            User? user = await _users.Users.FirstOrDefaultAsync(u => u.RefreshToken == request.RefreshTocken);
 
             if (user == null)
                 throw new NotFoundException();
 
-            string newAccessToken = _tokensGenerator.GenerateAccessTocken(request.UserId);
+            string newAccessToken = _tokensGenerator.GenerateAccessTocken(user.Id);
             string newRefreshToken = _tokensGenerator.GenerateRefreshTocken();
 
             // сохранение нового refresh токена пользователя

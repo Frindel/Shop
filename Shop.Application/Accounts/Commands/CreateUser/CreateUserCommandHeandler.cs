@@ -21,7 +21,7 @@ namespace Shop.Application.Accounts.Commands.CreateUser
             User createdUser = new User()
             {
                 RefreshToken = refreshToken,
-                IsAdmin = command.IsAdmin
+                IsAdmin = command.IsAdmin!.Value
             };
 
             await _users.Users.AddAsync(createdUser, cancellationToken);

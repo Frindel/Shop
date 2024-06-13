@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Products.Commands.CreateProduct;
 using Shop.Application.Products.Commands.DeleteProduct;
 using Shop.Application.Products.Queries.GetProducts;
@@ -7,6 +8,7 @@ using Shop.WebApi.Models.Products;
 namespace Shop.WebApi.Controllers
 {
     [Route("/api/products")]
+    [Authorize]
     public class ProductsController : BaseController
     {
         [HttpGet()]

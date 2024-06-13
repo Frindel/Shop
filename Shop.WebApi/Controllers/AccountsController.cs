@@ -18,7 +18,7 @@ namespace Shop.WebApi.Controllers
 
             var command = new CreateUserCommand()
             {
-                IsAdmin = request.IsAdmin!.Value
+                IsAdmin = request.IsAdmin!
             };
 
             var tokens = await Mediator.Send(command);
@@ -31,7 +31,6 @@ namespace Shop.WebApi.Controllers
         {
             var command = new UpdateAccessTokenCommand()
             {
-                UserId = CurrentUserId,
                 RefreshTocken = request.RefreshToken
             };
 
